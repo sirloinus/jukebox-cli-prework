@@ -54,6 +54,5 @@ def run
     help
   elsif decision == 'exit'.downcase
     exit_jukebox
-    break
   end
 end
