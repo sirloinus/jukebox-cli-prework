@@ -37,3 +37,23 @@ def play(songs)
     puts "Invalid input, please try again"
   end
 end
+
+def exit_jukebox
+  puts 'Goodbye'
+end
+
+def run
+  help
+  puts "Please enter a command:"
+  decision = gets.chomp
+  if decision == 'list'.downcase
+    list
+  elsif decision == 'play'.downcase
+    play
+  elsif decision == 'help'.downcase
+    help
+  elsif decision == 'exit'.downcase
+    exit_jukebox
+    break
+  end
+end
