@@ -43,7 +43,7 @@ def exit_jukebox
 end
 
 def run
-  help
+  help()
   puts "Please enter a command:"
   decision = gets.chomp
   if decision == 'list'.downcase
