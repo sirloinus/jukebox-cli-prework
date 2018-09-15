@@ -45,14 +45,23 @@ end
 def run
   help
   puts "Please enter a command:"
-  decision = gets.chomp
-  if decision == 'list'.downcase
-    list(songs)
-  elsif decision == 'play'.downcase
-    play(songs)
-  elsif decision == 'help'.downcase
-    help(songs)
-  elsif decision == 'exit'.downcase
-    exit_jukebox
+  decision = gets.chomp.downcase
+  loop do
+    if decision == 'list'
+      list(songs)
+      puts "Please enter a command:"
+      decision = gets.chomp.downcase
+    elsif decision == 'play'
+      play(songs)
+      puts "Please enter a command:"
+      decision = gets.chomp.downcase
+    elsif decision == 'help'
+      help(songs)
+      puts "Please enter a command:"
+      decision = gets.chomp.downcase
+    elsif decision == 'exit'
+      exit_jukebox
+      break
+    end
   end
 end
