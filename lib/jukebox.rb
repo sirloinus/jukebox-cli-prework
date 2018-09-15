@@ -56,7 +56,7 @@ def run(songs)
       puts "Please enter a command:"
       decision = gets.chomp.downcase
     elsif decision == 'help'
-      help(songs)
+      help
       puts "Please enter a command:"
       decision = gets.chomp.downcase
     elsif decision == 'exit'
