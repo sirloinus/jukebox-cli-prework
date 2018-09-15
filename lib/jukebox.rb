@@ -43,15 +43,15 @@ def exit_jukebox
 end
 
 def run
-  help()
+  help
   puts "Please enter a command:"
   decision = gets.chomp
   if decision == 'list'.downcase
-    list
+    list(songs)
   elsif decision == 'play'.downcase
-    play
+    play(songs)
   elsif decision == 'help'.downcase
-    help
+    help(songs)
   elsif decision == 'exit'.downcase
     exit_jukebox
   end
