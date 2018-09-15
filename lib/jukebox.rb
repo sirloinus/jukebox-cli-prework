@@ -29,8 +29,10 @@ end
 def play(songs)
   puts "Please enter a song name or number:"
   first_response = gets.chomp
-  if first_response #is a valid song number or song name
-    puts "Playing #{}"
+  if songs.include?(first_response) #is a valid song name do below
+    puts "Playing #{first_response}"
+  elsif (1..9).to_a.include?(first_response.to_i) #if first_response as a number exists in array of 1-9 then do below.
+    puts "Playing #{songs[first_response.to_i - 1]}"
   else
     puts "Invalid input, please try again"
   end
