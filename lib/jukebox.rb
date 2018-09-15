@@ -42,18 +42,26 @@ def exit_jukebox
   puts 'Goodbye'
 end
 
-def run
+def run(songs)
   help
   puts "Please enter a command:"
-  decision = gets.chomp
-  if decision == 'list'.downcase
-    list
-  elsif decision == 'play'.downcase
-    play
-  elsif decision == 'help'.downcase
-    help
-  elsif decision == 'exit'.downcase
-    exit_jukebox
-    break
+  decision = gets.chomp.downcase
+  loop do
+    if decision == 'list'
+      list(songs)
+      puts "Please enter a command:"
+      decision = gets.chomp.downcase
+    elsif decision == 'play'
+      play(songs)
+      puts "Please enter a command:"
+      decision = gets.chomp.downcase
+    elsif decision == 'help'
+      help
+      puts "Please enter a command:"
+      decision = gets.chomp.downcase
+    elsif decision == 'exit'
+      exit_jukebox
+      break
+    end
   end
 end
